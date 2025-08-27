@@ -1,19 +1,7 @@
-{% load bootstrap4 %}
-{% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Django simple blog</title>
-    {% bootstrap_css %}
-  </head>
-  <body class="bg-light">
-    <div class="container mt-4 d-flex">
-      <a class="mx-4" href="/articles/">Статьи</a>
-      <a class="mx-4" href="/categories/">Категории статей</a>
-      <a class="mx-4" href="/about/">О нас</a>
-    </div>
-  </body>
-</html>
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+
+{% endblock %}

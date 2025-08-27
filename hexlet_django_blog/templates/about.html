@@ -1,18 +1,9 @@
-{% load bootstrap4 %}
-{% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Django simple blog</title>
-    {% bootstrap_css %}
-  </head>
-  <body class="bg-light">
-    <div class="container mt-4">
-      <h1>О блоге</h1>
-      <p>Эксперименты с Django на Хекслете</p>
-    </div>
-  </body>
-</html>
+{% block title %}Эксперименты с Django на Хекслете{% endblock %}
+
+{% block content %}
+    <h1>О блоге</h1>
+    <p>Эксперименты с Django на Хекслете</p>
+    <p>{{ tags|join:', ' }}</p>
+{% endblock %}

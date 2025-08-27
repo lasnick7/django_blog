@@ -1,0 +1,29 @@
+{% load bootstrap4 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{% block title %}Django на Хекслете{% endblock %}</title>
+  {% bootstrap_css %}
+</head>
+<body class="bg-light">
+<header>
+  <div class="container mt-4 d-flex">
+      {% block sidebar %}
+        <a class="mx-4" href="/">Главная</a>
+        <a class="mx-4" href="/articles/">Статьи</a>
+        <a class="mx-4" href="/categories/">Категории статей</a>
+        <a class="mx-4" href="/about/">О нас</a>
+      {% endblock %}
+  </div>
+</header>
+<main>
+  <div class="container mt-4">
+      {% block content %}{% endblock %}
+  </div>
+</main>
+</body>
+</html>
