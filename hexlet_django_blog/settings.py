@@ -23,9 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y2^83txg2qe6d2j0*526x(tzhu&t)8^qjqzwe-w-+l(vz&x=3q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -55,6 +54,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'hexlet_django_blog.urls'
+
+handler404 = "hexlet_django_blog.views.page_not_found_view"
 
 TEMPLATES = [
     {

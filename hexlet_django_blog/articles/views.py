@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
+from django.http import Http404
 
 cnt = 5
 articles = [
@@ -42,7 +43,11 @@ def index(request):
 
 @require_http_methods(["GET"])
 def show_article(request, article_id):
-    article = next(a for a in articles if a['id'] == article_id)
+    try:
+        article = next(a for a in articles if a['id'] == article_id)
+    except StopIteration as e:
+        raise Http404()
+
     return render(
         request,
         'articles/article.html',

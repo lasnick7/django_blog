@@ -20,6 +20,7 @@ from hexlet_django_blog.views import IndexPageView
 from hexlet_django_blog import views
 from django.views.generic.base import TemplateView
 
+handler404 = 'hexlet_django_blog.views.page_not_found_view'
 
 urlpatterns = [
     path('', IndexPageView.as_view(), name='index'),
