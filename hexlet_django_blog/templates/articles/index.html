@@ -4,4 +4,13 @@
 
 {% block content %}
 <h1>Статьи</h1>
+<ul>
+  {% for article in articles %}
+  <li>
+    <a href="/articles/{{ article.id }}/">{{ article.title }}</a>
+     by {{ article.author }}
+    Теги: {{ article.tags|join:", " }}
+  </li>
+  {% endfor %}
+</ul>
 {% endblock %}

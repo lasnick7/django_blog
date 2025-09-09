@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic.base import TemplateView
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 
 class IndexPageView(TemplateView):
@@ -21,5 +23,10 @@ def index(request):
         },
     )
 
+
 def about(request):
     return render(request, "about.html")
+
+
+def redirect(request):
+    return HttpResponseRedirect(reverse("show_article", args=[2]))

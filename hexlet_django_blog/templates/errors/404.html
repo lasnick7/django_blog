@@ -1,0 +1,8 @@
+{% extends "articles/base_articles.html" %}
+
+{% block title %}Ошибка{% endblock %}
+
+{% block content %}
+<h1>{{ error.code }}</h1>
+<p>{{ error.text }}</p>
+{% endblock %}

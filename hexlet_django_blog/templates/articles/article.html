@@ -1,0 +1,8 @@
+{% extends "articles/base_articles.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<h1>Статья номер {{ article.id }} Теги: {{ article.tags|join:", " }}</h1>
+<h2>{{ article.title }}</h2>
+{% endblock %}
